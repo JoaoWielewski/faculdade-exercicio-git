@@ -10,6 +10,7 @@ public class Menu {
 
     public void imprimirMenu() {
         System.out.println("1- Cadastrar usuário");
+        System.out.println("2- Listar usuários");
         System.out.println("ou digite qualquer coisa para sair");
         Scanner scanner = new Scanner(System.in);
         String escolha = scanner.nextLine();
@@ -27,6 +28,15 @@ public class Menu {
 
             Usuario usuario = new Usuario(nome, idade, genero, sobrenome, comida);
             usuarios.add(usuario);
+        } else if (Objects.equals(escolha, "2")) {
+            for (Usuario usuario : usuarios) {
+                System.out.println("Nome:" + usuario.getNome());
+                System.out.println("Sobrenome:" + usuario.getSobrenome());
+                System.out.println("Genero:" + usuario.getGenero());
+                System.out.println("Idade:" + usuario.getIdade());
+                System.out.println("Comida preferida:" + usuario.getComidaPreferida());
+                System.out.println();
+            }
         }
     }
 
